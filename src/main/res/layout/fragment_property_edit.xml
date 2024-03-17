@@ -36,6 +36,37 @@
         android:id="@+id/property_description"
         android:inputType="none"
         android:hint="@string/property_description_hint">
+    </EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/property_owner_label_edit"
+        style="?android:listSeparatorTextViewStyle"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/property_owner_name"
+        android:inputType="none"
+        android:hint="@string/property_owner_hint">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/property_owner_email_label_edit"
+        style="?android:listSeparatorTextViewStyle"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/property_owner_email"
+        android:inputType="none"
+        android:hint="@string/property_owner_email_hint">
 
     </EditText>
 

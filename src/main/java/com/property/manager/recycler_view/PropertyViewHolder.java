@@ -42,7 +42,7 @@ public class PropertyViewHolder extends RecyclerView.ViewHolder {
         this.context = context;
         propertyIdText = (TextView) itemView.findViewById(R.id.list_item_property_id_text_view);
         propertyNameText = (TextView) itemView.findViewById(R.id.list_item_property_name_text_view);
-        imageView= (ImageView) itemView.findViewById(R.id.property_photo);
+        //imageView= (ImageView) itemView.findViewById(R.id.property_photo);
         //prope
 
 
@@ -54,8 +54,8 @@ public class PropertyViewHolder extends RecyclerView.ViewHolder {
         propertyIdText.setText(property.getPropertyId().toString());
         propertyNameText.setText(property.getPropertyName());
         Log.i("Property Name ###########  ",property.getPropertyName());
-        if(property.getmPropertyPhoto()!=null)
-            imageView.setImageDrawable(Drawable.createFromPath(property.getmPropertyPhoto().getAbsolutePath()));
+        //if(property.getmPropertyPhoto()!=null)
+            //imageView.setImageDrawable(Drawable.createFromPath(property.getmPropertyPhoto().getAbsolutePath()));
 
     }
 

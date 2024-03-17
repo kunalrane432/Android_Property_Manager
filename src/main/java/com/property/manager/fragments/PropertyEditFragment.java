@@ -25,6 +25,8 @@ public class PropertyEditFragment extends DialogFragment {
 
     public static final String ARG_PROPERTY_NAME = "property_name";
 
+    public static final String ARG_PROPERTY = "property";
+
     public static final String ARG_PROPERTY_DESCRIPTION = "property_description";
 
     //public static final String EXTRA_EDIT = "property_edit_dialog_extra";
@@ -32,6 +34,9 @@ public class PropertyEditFragment extends DialogFragment {
     private EditText propertyNameText;
 
     private EditText propertyDescriptionText;
+
+    private EditText propertyOwnerText;
+    private EditText propertyOwnerEmailText;
 
     public PropertyEditFragment() {
         // Required empty public constructor
@@ -72,6 +77,12 @@ public class PropertyEditFragment extends DialogFragment {
         propertyNameText.setText(property.getPropertyName());
         propertyDescriptionText.setText(property.getPropertyDescription());
 
+        propertyOwnerText = (EditText) v.findViewById(R.id.property_owner_name);
+        propertyOwnerEmailText = (EditText) v.findViewById(R.id.property_owner_email);
+
+        propertyOwnerText.setText(property.getOwner());
+        propertyOwnerEmailText.setText(property.getOwnerEMail());
+
         return new AlertDialog.Builder(requireActivity())
                 .setView(v)
                 .setTitle(R.string.edit_property)
@@ -82,17 +93,26 @@ public class PropertyEditFragment extends DialogFragment {
                             public void onClick(DialogInterface dialog, int which) {
                                 String propertyName = propertyNameText.getText().toString();
                                 String propertyDescription = propertyDescriptionText.getText().toString();
-                                sendResult(PropertyDetailsFragment.REQUEST_EDIT, propertyName, propertyDescription);
+                                String propertyOwner = propertyOwnerText.getText().toString();
+                                String propertyOwnerEmail = propertyOwnerEmailText.getText().toString();
+                                Property p= new Property();
+
+                                p.setPropertyName(propertyName);
+                                p.setPropertyDescription(propertyDescription);
+                                p.setOwner(propertyOwner);
+                                p.setOwnerEMail(propertyOwnerEmail);
+
+                                sendResult(PropertyDetailsFragment.REQUEST_EDIT, p);
                             }
                         }).create();
 
     }
 
-    private void sendResult(String resultCode, String propertyName, String propertyDescription) {
+    private void sendResult(String resultCode, Property property) {
         Bundle bundle = new Bundle();
         //bundle.put
-        bundle.putString(ARG_PROPERTY_NAME, propertyName);
-        bundle.putString(ARG_PROPERTY_DESCRIPTION, propertyDescription);
+        bundle.putParcelable(ARG_PROPERTY, property);
+        //bundle.putString(ARG_PROPERTY_DESCRIPTION, propertyDescription);
         getParentFragmentManager().setFragmentResult(resultCode, bundle);
     }
 }

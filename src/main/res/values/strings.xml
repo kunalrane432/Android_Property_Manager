@@ -10,6 +10,15 @@
     <string name="property_edit_property_label">Edit Property Details: </string>
     <string name="edit_property">Edit Property </string>
 
+    <string name="property_owner_label">Select Owner: </string>
+    <string name="property_owner_text">Choose Owner</string>
+    <string name="property_owner_label_edit">Property Owner: </string>
+    <string name="property_owner_hint">Enter Property Owner: </string>
+    <string name="property_owner_email_label_edit">Property Owner Email: </string>
+    <string name="property_owner_email_hint">Enter Property Owner Email: </string>
+    <string name="property_edit_property_owner_details">Edit Property Owner Details:</string>
+    <string name="property_send_email">Send Email:</string>
+    <string name="property_send_email_text">Send Email</string>
     <string name="date_picker_title">Property Availability Date:</string>
 
 </resources>

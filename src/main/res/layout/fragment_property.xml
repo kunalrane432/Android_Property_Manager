@@ -7,6 +7,24 @@
     tools:context=".fragments.PropertyDetailsFragment"
     android:orientation="vertical">
 
+    <ImageView
+        android:id="@+id/property_photo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerInside"
+        android:background="@android:color/darker_gray"
+        android:cropToPadding="true">
+
+    </ImageView>
+
+    <ImageButton
+        android:id="@+id/property_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src = "@android:drawable/ic_menu_camera">
+
+    </ImageButton>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -62,6 +80,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/text_color"
+        android:text="@string/property_owner_label_edit"
+        style="?android:listSeparatorTextViewStyle"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="@color/text_color_value"
+        android:id="@+id/property_owner_name">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color"
+        android:text="@string/property_owner_email_label_edit"
+        style="?android:listSeparatorTextViewStyle"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="@color/text_color_value"
+        android:id="@+id/property_owner_email">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color"
         android:text="@string/property_availablility_date_label"
         style="?android:listSeparatorTextViewStyle"
         />
@@ -92,5 +144,45 @@
         android:background="@drawable/rounded_buttons"
         android:text="@string/edit_property"
         />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color"
+        android:text="@string/property_edit_property_owner_details"
+        style="?android:listSeparatorTextViewStyle"
+        />
+
+
+    <Button
+        android:id="@+id/property_owner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/rounded_buttons"
+        android:paddingTop="10dp"
+        android:text="@string/property_owner_text"
+        android:textColor="@color/button_text_color_selector" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color"
+        android:text="@string/property_send_email"
+        style="?android:listSeparatorTextViewStyle"
+        />
+
+    <Button
+        android:id="@+id/property_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/rounded_buttons"
+        android:paddingTop="10dp"
+        android:text="@string/property_send_email_text"
+        android:textColor="@color/button_text_color_selector" />
 
 </LinearLayout>

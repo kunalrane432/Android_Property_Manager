@@ -16,6 +16,12 @@ public class Property implements Parcelable {
     private String propertyDescription;
     private Date availabilityDate;
 
+    private String owner;
+
+    private String ownerEMail;
+
+    private String ownerNumber;
+
     private String ownerDetails;
 
 
@@ -27,6 +33,9 @@ public class Property implements Parcelable {
         propertyDescription = in.readString();
         ownerDetails = in.readString();
         availabilityDate=new Date(in.readLong());
+        owner=in.readString();
+        ownerNumber=in.readString();
+        ownerEMail=in.readString();
 
     }
 
@@ -38,12 +47,15 @@ public class Property implements Parcelable {
         this.mPropertyPhoto = mPropertyPhoto;
     }
 
-    public Property(UUID propertyId, String propertyName, String propertyDescription, Date availabilityDate, String ownerDetails) {
+    public Property(UUID propertyId, String propertyName, String propertyDescription, Date availabilityDate, String ownerDetails,String owner,String ownerNumber,String ownerEMail) {
         this.propertyId = propertyId;
         this.propertyName = propertyName;
         this.propertyDescription = propertyDescription;
         this.availabilityDate = availabilityDate;
         this.ownerDetails = ownerDetails;
+        this.owner=owner;
+        this.ownerNumber=ownerNumber;
+        this.ownerEMail=ownerEMail;
     }
 
     public static final Creator<Property> CREATOR = new Creator<Property>() {
@@ -103,6 +115,30 @@ public class Property implements Parcelable {
         this.availabilityDate = availabilityDate;
     }
 
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public String getOwnerEMail() {
+        return ownerEMail;
+    }
+
+    public void setOwnerEMail(String ownerEMail) {
+        this.ownerEMail = ownerEMail;
+    }
+
+    public String getOwnerNumber() {
+        return ownerNumber;
+    }
+
+    public void setOwnerNumber(String ownerNumber) {
+        this.ownerNumber = ownerNumber;
+    }
+
 
     public String getPhotoFilename(){
         return "IMG_" + getPropertyId().toString() + ".jpg";
@@ -120,6 +156,10 @@ public class Property implements Parcelable {
         dest.writeString(propertyDescription);
         dest.writeString(ownerDetails);
         dest.writeLong(availabilityDate.getTime());
+        dest.writeString(owner);
+        dest.writeString(ownerEMail);
+        dest.writeString(ownerNumber);
+
         //dest.write
     }
 }

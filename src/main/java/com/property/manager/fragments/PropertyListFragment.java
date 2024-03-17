@@ -18,6 +18,7 @@ import com.property.manager.recycler_view.PropertyListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class PropertyListFragment extends Fragment {
 
@@ -70,6 +71,7 @@ public class PropertyListFragment extends Fragment {
         mProperties = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             Property property = new Property();
+            property.setPropertyId(UUID.randomUUID());
             property.setPropertyName("Property Name #" + i);
             property.setPropertyDescription("Property Description #" + i);
             mProperties.add(property);
